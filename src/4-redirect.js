@@ -1,4 +1,4 @@
-import { Switch, Route, Link, Redirect } from 'react-router-dom'
+import { Routes, Route, Link, Redirect } from 'react-router-dom'
 
 const Perfil = () => {
   const loggedIn = false
@@ -42,8 +42,8 @@ function App() {
         </ul>
       </nav>
       <section>
-        <Switch>
-          {/* Redirect se puede usar dentro de los switch para redirigir de una URL a otra */}
+        <Routes>
+          {/* Redirect se puede usar dentro de los Routes para redirigir de una URL a otra */}
           <Redirect exact from="/" to="/home" />
           <Route path="/portafolio">
             <Portafolio />
@@ -54,7 +54,7 @@ function App() {
           <Route path="/home">
             <Inicio />
           </Route>
-        </Switch>
+        </Routes>
       </section>
     </div>
   );

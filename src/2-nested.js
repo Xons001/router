@@ -1,8 +1,8 @@
-import { Switch, Route, Link, useRouteMatch, useParams } from 'react-router-dom'
+import { Routes, Route, Link, useMatch, useParams } from 'react-router-dom'
 
 const Proyecto = () => {
   const params = useParams()
-  const match = useRouteMatch() // no devuelve la ruta del proyecto, devuelve la ruta del componente!!
+  const match = useMatch() // no devuelve la ruta del proyecto, devuelve la ruta del componente!!
 
   console.log({ params, match })
   return (
@@ -13,7 +13,7 @@ const Proyecto = () => {
 }
 
 const Portafolio = () => {
-  const match = useRouteMatch()
+  const match = useMatch()
   const params = useParams() // mostrar que no se obtienen los parametros de la ruta, si no que del componente siempre que este acepte con el componente de Route
   console.log({ match, params }, 'lala')
 
@@ -32,12 +32,12 @@ const Portafolio = () => {
         </li>
       </ul>
       <div>
-        <Switch>
+        <Routes>
           {/* primero con proyecto-1 y proyecto-2, luego con :id */}
           <Route path={`${match.path}/:id`}>
             <Proyecto />
           </Route>
-        </Switch>
+        </Routes>
       </div>
     </div>
   )
@@ -59,7 +59,7 @@ function App() {
         </ul>
       </nav>
       <section>
-        <Switch>
+        <Routes>
           <Route path="/portafolio">
             <Portafolio />
           </Route>
@@ -69,7 +69,7 @@ function App() {
           <Route path="/">
             <h1>Inicio</h1>
           </Route>
-        </Switch>
+        </Routes>
       </section>
     </div>
   );

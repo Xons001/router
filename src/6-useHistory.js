@@ -1,4 +1,4 @@
-import { Switch, Route, Link, useHistory } from 'react-router-dom'
+import { Routes, Route, Link, useHistory } from 'react-router-dom'
 
 function App() {
   const history = useHistory()
@@ -28,7 +28,7 @@ function App() {
       <section>
         <button onClick={back}>Atras</button>
         <button onClick={forward}>Adelante</button>
-        <Switch>
+        <Routes>
           <Route path="/portafolio">
             <h1>Portafolio</h1>
           </Route>
@@ -41,7 +41,7 @@ function App() {
           <Route path="*">
             404: ruta no encontrada
           </Route>
-        </Switch>
+        </Routes>
       </section>
     </div>
   );

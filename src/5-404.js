@@ -1,9 +1,9 @@
-import { Switch, Route, Link } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
 
 // Link permite navegar dentro de react router. Hay que usar estos y no los anchor tag "a"
-// Switch va a seleccionar la primera ruta que encuentre e imprimirá solo esa, si no hay switch
+// Routes va a seleccionar la primera ruta que encuentre e imprimirá solo esa, si no hay Routes
 // va a mostrar todo siempre que se encuentre en la ruta
-// mostrar ejemplo cuando no se usa switch
+// mostrar ejemplo cuando no se usa Routes
 //
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
         </ul>
       </nav>
       <section>
-        <Switch>
+        <Routes>
           <Route path="/portafolio">
             <h1>Portafolio</h1>
           </Route>
@@ -38,7 +38,7 @@ function App() {
           <Route path="*">
             404: ruta no encontrada
           </Route>
-        </Switch>
+        </Routes>
       </section>
     </div>
   );

@@ -1,4 +1,4 @@
-import { Switch, Route, Link, useLocation, useEffect } from 'react-router-dom'
+import { Routes, Route, Link, useLocation, useEffect } from 'react-router-dom'
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -28,7 +28,7 @@ function App() {
         </ul>
       </nav>
       <section>
-        <Switch>
+        <Routes>
           <Route path="/portafolio">
             <h1>Portafolio</h1>
           </Route>
@@ -41,7 +41,7 @@ function App() {
           <Route path="*">
             404: ruta no encontrada
           </Route>
-        </Switch>
+        </Routes>
       </section>
     </div>
   );

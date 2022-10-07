@@ -1,4 +1,4 @@
-import { Switch, Route, NavLink } from 'react-router-dom'
+import { Routes, Route, NavLink } from 'react-router-dom'
 
 // mostrar la propiedad de activeClassName
 // por defecto es active pero se puede cambiar, se activa con la ruta y explicar exact
@@ -24,7 +24,7 @@ function App() {
         </ul>
       </nav>
       <section>
-        <Switch>
+        <Routes>
           <Route path="/portafolio">
             <h1>Portafolio</h1>
           </Route>
@@ -34,7 +34,7 @@ function App() {
           <Route path="/">
             <h1>Inicio</h1>
           </Route>
-        </Switch>
+        </Routes>
       </section>
     </div>
   );
